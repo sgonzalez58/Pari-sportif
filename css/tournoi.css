@@ -1,0 +1,11 @@
+.logo_equipe{
+   
+    width: 50px;
+}
+.equipe_1_1{
+    
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
