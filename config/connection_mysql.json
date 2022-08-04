@@ -1,7 +1,7 @@
 {
     "host": "localhost",
     "user": "root",
-    "password": "",
-    "database": "test",
+    "password": "root",
+    "database": "pariSportif",
     "port": 3306
 }
