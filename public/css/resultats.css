@@ -5,7 +5,6 @@
     position: relative;
 }
 
-
 .ligne{
     position: absolute;
     top:150px;
@@ -15,10 +14,6 @@
 
 .equipe_4{
     border:1px solid black
-}
-
-.equipe_2{
-    
 }
 
 .equipe_1{
