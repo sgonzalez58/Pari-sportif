@@ -60,7 +60,7 @@ main{
     overflow: hidden;
 }
 
-.equipe{
+.match{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -70,6 +70,7 @@ main{
 
 .logo_equipe{
     padding : 15px;
+    max-width : 150px;
 }
 
 .nom_equipe{
@@ -77,7 +78,7 @@ main{
     font-weight: bold;
 }
 
-#insertion_equipe{
+#creation_match{
     margin:50px auto;
 }
 
