@@ -157,6 +157,17 @@ function confirmer(){
                         equipes[0].remove();
                     }
                 }
+                let bouton_suppression = document.createElement('button');
+                bouton_suppression.setAttribute('class', 'bouton_suppression');
+                bouton_suppression.innerText = 'X';
+                date.parentElement.append(bouton_suppression);
+                let bouton_modification = document.createElement('img');
+                bouton_modification.setAttribute('class', 'bouton_modification');
+                bouton_modification.setAttribute('src', '../img/edit.png');
+                bouton_modification.setAttribute('alt', 'Bouton de modification');
+                date.parentElement.prepend(bouton_modification);
+                bouton_suppression.addEventListener('click', supprimer);
+                bouton_modification.addEventListener('click', modifier);
             }
         );
         ajout.innerText = 'ajouter un match';
@@ -165,9 +176,17 @@ function confirmer(){
     }
 }
 
-function supprimer(){
+function supprimer(e){
     if(window.confirm('Etes-vous sûr(e) de vouloir supprimer ce match ?')){
-        
+        let equipe1 = e.srcElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText;
+        let equipe2 = e.srcElement.previousElementSibling.previousElementSibling.firstElementChild.innerText;
+        let date_match = e.srcElement.previousElementSibling.getAttribute('date');
+        $.post('/supprimerMatch', {equipe1:equipe1, equipe2:equipe2,date:date_match}, 
+            function(data, status){
+                console.log(data);
+                e.srcElement.parentElement.remove();
+            }
+        );
     }
 }
 
@@ -225,7 +244,8 @@ function modifier(){
                 match.append(equipe2);
                 let date = document.createElement('p');
                 date.setAttribute('class', 'date_match');
-                date.innerText = new Date(value['date_match']).toLocaleDateString();
+                date.setAttribute('date', new Date(value['date_match']))
+                date.innerText = new Date(value['date_match']).toLocaleString();
                 match.append(date);
                 ajout.insertAdjacentElement('beforebegin', match);
                 let bouton_suppression = document.createElement('button');

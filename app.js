@@ -84,10 +84,19 @@ app.post("/addMatch", (req, res) => {
 })
 
 app.post("/loadMatch", (req, res) => {
-   db.query("SELECT * FROM rencontre", function (err, result){
+   db.query("SELECT * FROM rencontre ORDER BY date_match", function (err, result){
       if (err) throw err;
       console.log('Données envoyées.');
       res.json(result);
+   })
+})
+
+app.post('/supprimerMatch', (req, res) =>{
+   let date = new Date(req.body.date);
+   db.query("DELETE FROM rencontre WHERE ((equipe1 = (SELECT id FROM equipe WHERE nom = ?) AND equipe2 = (SELECT id FROM equipe WHERE nom = ?)) OR (equipe1 = (SELECT id FROM equipe WHERE nom = ?) AND equipe2 = (SELECT id FROM equipe WHERE nom = ?))) AND date_match = ? ;", [req.body.equipe1, req.body.equipe2, req.body.equipe2, req.body.equipe1, date], function(err, result){
+      if (err) throw err;
+      res.json('Suppression réussie');
+      console.log('Suppression réussie');
    })
 })
 
