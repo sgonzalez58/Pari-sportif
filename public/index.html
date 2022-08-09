@@ -4,19 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity=
         "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
         crossorigin="anonymous" defer>
     </script>
-    <script src='js/envoi.js' defer></script>
+    <script src="./js/index.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <header>*
-        <img src="" alt="">
+        <header>
+            <a href='index.html'>
+                <img src="../img/logo.png" alt="logo du site" id="logo_site">
+            </a>
+        <nav>
+            <ul class="menu_principal">
+                <li>
+                    <a href="equipes.html" id="lien_equipe">
+                        Equipes
+                    </a>
+                </li>
+                <li>
+                    <a href="calendrier.html">
+                        Calendrier&#9660
+                    </a>
+                    <ul class="menu_secondaire">
+                        <li>
+                            <a href="matches.html">
+                                Liste&nbsp;des&nbsp;matches
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <button id="submit">submit</button>
-    <a href="equipes.html">les equipes</a>
+    <main>
+       <!-- Add a placeholder for the Twitch embed -->
+<div id="twitch-embed"></div>
+
+<!-- Load the Twitch embed script -->
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+<!-- Create a Twitch.Player object. This will render within the placeholder div -->
+<script type="text/javascript">
+  new Twitch.Player("twitch-embed", {
+    channel: "otplol_"
+  });
+</script>
+        <div id="liste">
+           
+        </div>
+    </main>
 </body>
 </html>

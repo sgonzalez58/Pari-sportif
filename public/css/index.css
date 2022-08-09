@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height : 10vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.menu_principal{
+    display: flex;
+    position: relative;
+}
+
+
+.menu_secondaire{
+    display: none;
+    flex-direction: column;
+}
+
+li{
+    list-style: none;
+    border: 1px solid black;
+    padding : 10px 20px;
+    position: relative;
+}
+
+li:hover .menu_secondaire{
+    display: flex;
+    top:40px;
+    left : 0px;
+    width: fit-content;
+    position: absolute;
+    background-color: aqua;
+}
+
+a{
+    padding : 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    background-color: rgb(167, 252, 223);
+    padding : 50px 0;
+    min-height: calc(90vh - 100px);
+}
+
+#liste{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 10%;
+    background-color: aquamarine;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.match{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding : 20px 0;
+    background-color: aqua;
+}
+
+.logo_equipe{
+    padding : 15px;
+    max-width : 150px;
+}
+
+.nom_equipe{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#creation_match{
+    margin:50px auto;
+}
+
+.bouton_suppression{
+    background-color: red;
+    color : white;
+    border-radius: 20%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.bouton_modification{
+    background-color: orange;
+    border-radius: 20%;
+    border: 2px solid white;
+    padding : 13px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    filter:invert(1)
+}
+
+#twitch-embed{
+    display: flex;
+   width: 100%;
+   justify-content: center;
+}
+
+#twitch-embed iframe{
+    
+    min-height: 500px;
+    min-width: 70vw;
+}

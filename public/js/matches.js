@@ -230,6 +230,11 @@ function modifier(){
                     score1.setAttribute('class', 'score');
                     score1.innerText = value['score_equipe1'];
                     match.append(score1);
+                }else{
+                    let score2 = document.createElement('p');
+                    score2.setAttribute('class', 'score');
+                    score2.innerText ='-';
+                    match.append(score2);
                 }
                 let versus = document.createElement('p');
                 versus.setAttribute('class', 'versus');
@@ -239,6 +244,11 @@ function modifier(){
                     let score2 = document.createElement('p');
                     score2.setAttribute('class', 'score');
                     score2.innerText = value['score_equipe2'];
+                    match.append(score2);
+                }else{
+                    let score2 = document.createElement('p');
+                    score2.setAttribute('class', 'score');
+                    score2.innerText = '-';
                     match.append(score2);
                 }
                 match.append(equipe2);
