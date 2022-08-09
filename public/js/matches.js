@@ -166,7 +166,9 @@ function confirmer(){
 }
 
 function supprimer(){
-
+    if(window.confirm('Etes-vous sûr(e) de vouloir supprimer ce match ?')){
+        
+    }
 }
 
 function modifier(){
